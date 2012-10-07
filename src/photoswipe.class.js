@@ -39,7 +39,7 @@
 		windowScrollHandler: null,
 		windowHashChangeHandler: null,
 		keyDownHandler: null,
-		windowOrientationEventName: null,
+		orientationEventName: null,
 		uiLayerTouchHandler: null,
 		carouselSlideByEndHandler: null,
 		carouselSlideshowStartHandler: null,
@@ -404,7 +404,7 @@
 				Util.Events.add(window.document.body, 'orientationchange', this.windowOrientationChangeHandler);
 			}
 			else{
-				var supportsOrientationChange = !Util.isNothing(window.onorientationchange);
+				var supportsOrientationChange = typeof window.onorientationchange === 'object';
 				this.orientationEventName = supportsOrientationChange ? 'orientationchange' : 'resize';
 			}
 			
